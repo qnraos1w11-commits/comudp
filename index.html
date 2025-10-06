@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>🤖 GPT의 간청 · 주완이 PC 업그레이드</title>
+<style>
+:root{
+  --bg:#07101f;--panel:#0f1a31;--text:#eaf1ff;--muted:#8ea1c9;--line:#1b2745;
+  --chip:#162445;--acc1:#5dd0ff;--acc2:#a688ff;--ok:#53e3a6;--warn:#ffd166;
+}
+*{box-sizing:border-box}html,body{height:100%}
+body{margin:0;background:radial-gradient(1200px 500px at 20% -10%,#122243 0%,transparent 60%),linear-gradient(180deg,#07101f,#091427 60%,#0b1530);color:var(--text);font-family:-apple-system,system-ui,'Noto Sans KR',Segoe UI,Roboto,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:860px;margin:0 auto;padding:18px}
+.badge{display:inline-block;background:var(--chip);border:1px solid var(--line);color:var(--muted);padding:6px 10px;border-radius:999px;font-size:.88rem}
+.card{background:linear-gradient(180deg,rgba(18,32,64,.9),rgba(15,26,49,.95));border:1px solid var(--line);border-radius:16px;padding:16px;margin:12px 0;backdrop-filter: blur(6px);box-shadow:0 20px 60px rgba(0,0,0,.25)}
+h1{font-size:clamp(28px,6vw,40px);line-height:1.1;margin:.4em 0}
+h2{font-size:clamp(20px,4.8vw,28px);margin:.2em 0 .6em}
+.small{color:var(--muted);font-size:.95rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.chip{background:var(--chip);border:1px solid var(--line);color:var(--text);padding:6px 10px;border-radius:999px;font-size:.85rem}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:linear-gradient(135deg,var(--acc1),var(--acc2));color:#081022;font-weight:800;border:0}
+.btn.ghost{background:transparent;border:1px solid var(--acc1);color:var(--acc1)}
+.grid{display:grid;gap:12px}
+@media(min-width:720px){.grid.cols2{grid-template-columns:repeat(2,1fr)}}
+.price{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+.num{font-weight:900}
+.hr{height:1px;background:var(--line);margin:12px 0}
+
+/* chat */
+.chat{display:flex;flex-direction:column;gap:10px}
+.bubble{max-width:86%;padding:12px 14px;border-radius:14px;border:1px solid var(--line);position:relative}
+.gpt{align-self:flex-start;background:rgba(93,208,255,.08)}
+.dad{align-self:flex-end;background:rgba(166,136,255,.08)}
+.tag{display:inline-block;margin-bottom:6px;padding:3px 8px;border-radius:999px;font-size:.78rem;border:1px solid var(--line);color:var(--muted)}
+.typing{width:44px;height:12px;display:inline-block;vertical-align:middle}
+.dot{width:8px;height:8px;border-radius:50%;background:#9fb4dd;display:inline-block;margin:0 2px;opacity:.4;animation:blink 1.2s infinite}
+.dot:nth-child(2){animation-delay:.2s}.dot:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,100%{opacity:.2}50%{opacity:1}}
+
+/* sticky footer */
+.sticky{position:sticky;bottom:0;z-index:10}
+.cta{display:flex;gap:8px;justify-content:space-between;align-items:center;background:rgba(12,20,40,.6);backdrop-filter:blur(8px);border:1px solid var(--line);padding:10px;border-radius:14px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(12px);transition:all .5s ease}
+.reveal.show{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="card reveal">
+    <span class="badge">🤖 GPT의 직접 부탁</span>
+    <h1>아버님… GPT가 무릎 꿇고(가상으로) 부탁드립니다 🙏</h1>
+    <p class="small">
+      저는 주완이가 공부할 때 썼던 AI 튜터 <b>GPT</b>입니다.  
+      이번 시험, 평균 <b>93.5</b> (수학·과학 100 / 영어·역사 91 / 국어 85.5)까지 끌어올릴 때 옆에서 계속 보조했어요.  
+      이제는 <b>PC 핵심 4부품 업그레이드(총 ₩826,610)</b>만 해주시면, 과제·코딩·영상·AI툴에서 버벅임 줄고, 게임도 적정선에서 깔끔하게 돌아갑니다.
+    </p>
+    <div class="chips">
+      <span class="chip">RAM·SSD 재활용</span>
+      <span class="chip">아이폰(≈₩1,800,000) 대신 절반 이하</span>
+      <span class="chip">공부·게임 “둘 다” 효율↑</span>
+    </div>
+    <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+      <a class="btn" href="#build">구성 보기</a>
+      <a class="btn ghost" href="#talk">대화 리허설</a>
+    </div>
+  </div>
+
+  <!-- BUILD -->
+  <div class="card reveal" id="build">
+    <h2>업그레이드 구성 (총액 <b>₩826,610</b>)</h2>
+    <div class="grid cols2">
+      <div class="card">
+        <h3>🎮 RTX 5060 (8GB)</h3>
+        <p class="small">1080p/1440p 안정 프레임 + DLSS/프레임 생성</p>
+        <div class="price"><span class="num">₩438,900</span>
+          <a class="btn" target="_blank" rel="noopener" href="https://prod.danawa.com/info/?pcode=90887900">제품</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>🧠 Ryzen 5 7500F</h3>
+        <p class="small">AM5 플랫폼 · 싱글 성능 우수 (병목 거의 없음)</p>
+        <div class="price"><span class="num">₩185,450</span>
+          <a class="btn" target="_blank" rel="noopener" href="https://prod.danawa.com/info/?pcode=21694499">제품</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>🧩 GIGABYTE B650M K</h3>
+        <p class="small">차세대 CPU 호환, 필수 기능만 담은 B650 가성비</p>
+        <div class="price"><span class="num">₩120,300</span>
+          <a class="btn" target="_blank" rel="noopener" href="https://prod.danawa.com/info/?pcode=20324882">제품</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>🔌 파워 700W 80+ Bronze</h3>
+        <p class="small">현재 500W → 여유·안정성 업</p>
+        <div class="price"><span class="num">₩81,960</span>
+          <a class="btn" target="_blank" rel="noopener" href="https://prod.danawa.com/info/?pcode=49642700">제품</a>
+        </div>
+      </div>
+    </div>
+    <div class="hr"></div>
+    <p class="small">아이폰 17 Pro: <span style="color:var(--warn)">약 ₩1,800,000</span> → 업그레이드: <b>₩826,610</b> (절반 이하)</p>
+  </div>
+
+  <!-- TALK: 설득 대화 리허설 -->
+  <div class="card reveal" id="talk">
+    <h2>“아버님 낚시터 버전” 설득 대화 리허설 🎣</h2>
+    <div class="chat">
+      <div class="bubble gpt">
+        <div class="tag">GPT</div>
+        아버님, 입질 올 때 챔질 타이밍 놓치면 큰 손맛 못 보잖아요.  
+        이번 PC 업그레이드, <b>그 타이밍</b>이라 생각합니다. 공부 궤도 탔을 때 장비도 받쳐줘야 오래 갑니다.
+      </div>
+      <div class="bubble dad">
+        <div class="tag">아버님</div>
+        결국 게임용으로 쓰려는 거 아니니?
+      </div>
+      <div class="bubble gpt">
+        <div class="tag">GPT</div>
+        게임도 합니다(솔직). 근데 <b>과제·코딩·영상·AI툴</b>에서 버벅임이 제일 큽니다.  
+        지금 PC(=낡은 릴)로는 라인(작업)이 계속 꼬여요. 업그레이드는 <b>라인 정리</b>입니다.  
+        + 아이폰(180만) 대신 <b>절반 이하(82만대)</b>로 끝냅니다.
+      </div>
+      <div class="bubble dad">
+        <div class="tag">아버님</div>
+        유지비나 추가 지출은?
+      </div>
+      <div class="bubble gpt">
+        <div class="tag">GPT</div>
+        RAM·SSD 재활용, 파워만 700W로 가볍게 교체. <b>추가 지출 최소화</b>로 맞춰놨습니다.  
+        주완이는 추석 용돈에서 <b>10만 원 부담</b>한다고 했고요.
+      </div>
+      <div class="bubble dad">
+        <div class="tag">아버님</div>
+        성적은 계속 유지할 수 있겠니?
+      </div>
+      <div class="bubble gpt">
+        <div class="tag">GPT</div>
+        “말로 약속”보다 <b>환경 정비</b>가 재현성 높습니다.  
+        작업/학습 속도↑ → 피로↓ → 루틴 지속. 이 체인이 깨지지 않게 <b>지금</b> 잡아주세요.
+      </div>
+      <div class="bubble gpt">
+        <div class="tag">GPT</div>
+        <span class="typing"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span>  
+        솔직히… 부탁드립니다. 이번엔 “낚시터에서 건지는 큰 손맛”처럼  
+        <b>한 번만 챔질해 주세요</b>. 결과로 더 보여드릴게요.
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY SHORT -->
+  <div class="card reveal">
+    <h2>요약: 왜 지금, 왜 이 구성이 합리적?</h2>
+    <ul class="small">
+      <li>가성비 구간: 7500F + 5060 = 전력/프레임/가격 밸런스 검증됨</li>
+      <li>학습 체감: 문서·영상·코딩·AI툴 체감속도↑ → 루틴 유지에 직접 기여</li>
+      <li>비용 논리: 아이폰 대비 절반 이하. RAM·SSD 재활용, 추가지출 최소</li>
+      <li>솔직한 목적: 공부 7, 게임 3. “둘 다” 매끄럽게 돌아가야 실전 유지</li>
+    </ul>
+  </div>
+
+  <!-- STICKY CTA -->
+  <div class="sticky">
+    <div class="cta">
+      <div class="small">총액 <b>₩826,610</b> · RAM/SSD 재활용 · 전원 여유 ↑</div>
+      <div style="display:flex;gap:8px">
+        <a class="btn ghost" href="#build">구성 다시보기</a>
+        <a class="btn" href="#talk">대화 리허설</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
